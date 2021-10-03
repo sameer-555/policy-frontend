@@ -5,7 +5,6 @@ import Pagination from "./Pagination";
 import Policy from "./Policy";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
-import Charts from "./Chart";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function PolicyList() {
@@ -25,7 +24,7 @@ export default function PolicyList() {
   useEffect(() => {
     const api = async () => {
       setLoading(true);
-      let response = await axios.get(process.env.REACT_API_CALL, {
+      let response = await axios.get("https://bcg-backend.herokuapp.com/api", {
         params: {
           pageNo: activePage,
           policyID: policySearch,

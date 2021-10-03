@@ -27,11 +27,14 @@ const PolicyEdit = (props) => {
   useEffect(() => {
     setLoading(true);
     const api = async () => {
-      let res = await axios.get(`${process.env.REACT_API_CALL}/single`, {
-        params: {
-          objID: policyObjId
+      let res = await axios.get(
+        `https://bcg-backend.herokuapp.com/api/single`,
+        {
+          params: {
+            objID: policyObjId
+          }
         }
-      });
+      );
       setLoading(false);
       setForm({
         policy_id: res.data.policy_id,

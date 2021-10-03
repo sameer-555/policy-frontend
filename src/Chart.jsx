@@ -10,7 +10,7 @@ const Charts = () => {
   useEffect(() => {
     setIsLoading(true);
     const fetchChartInfo = async () => {
-      let res = await axios.get(`${process.env.REACT_API_CALL}/chart`, {
+      let res = await axios.get(`https://bcg-backend.herokuapp.com/api/chart`, {
         params: {
           region: regionFilter
         }
